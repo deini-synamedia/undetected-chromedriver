@@ -100,6 +100,7 @@ class Chrome(selenium.webdriver.chrome.webdriver.WebDriver):
     def __init__(
         self,
         user_data_dir=None,
+        browser_executable_path=None,
         executable_path=None,
         port=0,
         options=None,
@@ -128,6 +129,10 @@ class Chrome(selenium.webdriver.chrome.webdriver.WebDriver):
         user_data_dir: str , optional, default: None (creates temp profile)
             if user_data_dir is a path to a valid chrome profile directory, use it,
             and turn off automatic removal mechanism at exit.
+
+        browser_executable_path: str, optional, default: None - use find_chrome_executable
+            Path to the browser executable.
+            If not specified, make sure the executable's folder is in $PATH
 
         executable_path: str, optional, default: None - path to custom chromedriver
             If not specified, UC will download it automatically
